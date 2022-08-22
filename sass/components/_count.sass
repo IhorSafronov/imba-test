@@ -1,0 +1,83 @@
+.banner-count
+    display: flex
+    column-gap: 45px
+    align-items: flex-end
+    @include respond (phone)
+        flex-direction: column-reverse
+        align-items: flex-start
+.text-count
+    position: relative
+.text-count >  p
+    font-weight: 400
+    font-size: 22px
+    line-height: 150%
+    color: $color-white
+    margin-bottom: 30px
+.big-text-count
+    font-weight: 900
+    font-size: 50px
+    line-height: 120%
+.line-through
+    position: absolute
+    top: -30px
+    left: 120px
+    font-weight: 400
+    font-size: 22px
+    line-height: 150%
+    color: $grey-text-color
+    text-decoration: line-through
+.currency
+    position: absolute
+    top: 0
+    left: 270px
+    font-size: 18px
+.btn-count
+    background-color: $brand-color-btn
+    width: 275px
+    height: 65px
+    border-radius: 15px
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 10px
+    @include respond (phone)
+        width: 343px
+    a
+        font-weight: 400
+        font-size: 16px
+        line-height: 150%
+        color: $brand-text-color
+        text-decoration: none
+.quantity
+    margin-left: 43px
+    @include respond (phone)
+        margin-left: 76px
+    p
+        font-weight: 400
+        font-size: 14px
+        line-height: 150%
+        color: $color-white
+.details-course
+    display: flex
+    margin-bottom: 40px
+    @include respond (phone)
+        flex-wrap: wrap
+    .about-course
+        margin-right: 50px
+        color: $color-white
+        border-left: 1px solid $brand-color-btn
+        padding-left: 15px
+        @include respond (phone)
+            flex-wrap: wrap
+            margin-right: 40px
+            margin-bottom: 20px
+            &:nth-child(2)
+                margin-right: 0
+    .title
+        font-weight: 300
+        font-size: 16px
+        line-height: 150%
+    .details
+        font-weight: 700
+        font-size: 18px
+        line-height: 150%

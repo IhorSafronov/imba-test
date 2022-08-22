@@ -1,0 +1,287 @@
+.header
+	position: absolute
+	width: 100%
+	height: 45px
+	left:0
+	top:0
+	z-index: 99
+	padding: 15px
+.header-main
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin: 0 20px
+	.logo
+		img
+
+			@include respond (full-screen)
+				width: 110px
+				height: 105px
+			@include respond (phone)
+				width: 60px
+				height: 35px
+	.menu > .menu-item
+		display: inline-block
+		margin-left: 30px
+		position: relative
+	.menu > .menu-item > a
+		display: block
+		padding: 12px 0
+		text-transform: capitalize
+		transition: all 0.3s ease
+		font-family: 'Roboto'
+		font-style: normal
+		font-weight: 400
+		font-size: 16px
+		line-height: 150%
+		color: $brand-text-color
+		text-decoration: none
+	.menu > .menu-item > a 
+		.plus
+			display: inline-block
+			height: 12px
+			width: 12px
+			position: relative
+			margin-left:5px
+			pointer-events: none
+	.menu > .menu-item > a 
+		.plus:before
+			content:''
+			position: absolute
+			box-sizing: border-box
+			left: 50%
+			top:50%
+			background-color: $color-black
+			height: 2px
+			width: 100%
+			transform: translate(-50%,-50%)
+			transition: all 0.3s ease
+		.plus:after
+			content:''
+			position: absolute
+			box-sizing: border-box
+			left: 50%
+			top:50%
+			background-color: $color-black
+			height: 2px
+			width: 100%
+			transform: translate(-50%,-50%)
+			transition: all 0.3s ease	
+	.menu > .menu-item:hover > a 
+		.plus:before
+			background-color: #e91e63
+		.plus:after
+			background-color: #e91e63   
+	.menu > .menu-item > a 
+		.plus:after
+			transform: translate(-50%,-50%) rotate(-90deg)
+	.menu > .menu-item > .sub-menu > .menu-item > a:hover
+		color: #e91e63
+	.menu > .menu-item:hover > a
+		color: #e91e63
+	.menu > .menu-item > .sub-menu
+		box-shadow: 0 0 10px rgba(0,0,0,0.2)
+		width: 220px
+		position: absolute
+		left:0
+		top:100%
+		background-color: $color-white
+		padding: 10px 0
+		border-top: 3px solid #e91e63
+		transform: translateY(10px)
+		transition: all 0.3s ease
+		opacity:0
+		visibility: hidden
+.menu > .menu-item-has-children:hover > .sub-menu
+	transform: translateY(0)
+	opacity: 1
+	visibility: visible
+.menu > .menu-item-has-children:hover > a 
+	.plus:after
+		transform: translate(-50%,-50%) rotate(0deg)
+.menu > .menu-item > .sub-menu > .menu-item
+	display: block
+.menu > .menu-item > .sub-menu > .menu-item > a
+	display: block
+	padding: 10px 20px
+	transition: all 0.3s ease
+	text-transform: capitalize
+	font-family: 'Roboto'
+	font-style: normal
+	font-weight: 400
+	font-size: 16px
+	line-height: 150%
+	color: $brand-text-color
+	text-decoration: none
+.open-nav-menu
+	// height: 34px
+	// width: 40px
+	// margin-right: 15px
+	display: none
+	// align-items: center
+	// justify-content: center
+	// cursor: pointer
+.menu-item-phone
+	display: none
+.open-nav-menu 
+	span
+		display: block
+		height: 4px
+		width: 35px
+		background-color: $color-black
+		position: relative
+	span::before
+		content: ''
+		position: absolute
+		left:0
+		width: 100%
+		height: 100%
+		background-color: $color-black
+	span::after
+		content: ''
+		position: absolute
+		left:0
+		width: 100%
+		height: 100%
+		background-color: $color-black
+.open-nav-menu 
+	span::before
+		top: -9px
+	span::after
+		top: 9px
+.close-nav-menu
+	height: 30px
+	width: 30px
+	background-color: transparent
+	margin:0 0 15px 15px
+	cursor: pointer
+	display: none
+	align-items: center
+	justify-content: center
+	img
+		width: 20px
+.menu-overlay
+	position: fixed
+	z-index: 999
+	background-color: transparent
+	left:0
+	top:0
+	height: 100%
+	width: 100%
+	visibility: hidden
+	transition: all 0.3s ease
+.header__contacts
+	display: flex
+	align-items: center
+.header__phone
+	@include respond (full-screen)
+		margin-right: 50px
+	@include respond (big-screen)
+		display: none
+	.phone
+		font-family: 'Inter'
+		font-style: normal
+		font-weight: 500
+		font-size: 24px
+		line-height: 150%
+		color: $brand-text-color
+		text-decoration: none
+.header__enter
+	padding: 15px 41px
+	background-color: #2B2B2A
+	border-radius: 15px
+	.header-btn
+		font-weight: 400
+		font-size: 16px
+		line-height: 150%
+		color: $color-white
+		text-decoration: none
+		@include respond (phone)
+			color: $brand-text-color
+	@include respond (phone)
+		background-color: transparent
+		padding: 0
+// /* responsive */
+@include respond (desctop)
+	.menu-overlay.active
+		visibility: visible
+		opacity: 1
+	.nav-menu
+		position: fixed
+		right: -280px
+		visibility: hidden
+		width: 280px
+		height: 100%
+		top:0
+		overflow-y: auto
+		background-color: #222222
+		z-index: 1000
+		padding: 15px 0
+		transition: all 0.5s ease
+	.nav-menu.open
+		visibility: visible
+		right: 0px
+	.menu-item-phone
+		display: block
+		padding: 12px
+		text-transform: capitalize
+		transition: all 0.3s ease
+		a
+			font-family: 'Roboto'
+			font-style: normal
+			font-weight: 400
+			font-size: 16px
+			line-height: 150%
+			color: $color-white
+			text-decoration: none
+	.header .menu > .menu-item
+		display: block
+		margin:0
+	.header .menu > .menu-item-has-children > a
+		display: flex
+		justify-content: space-between
+		align-items: center
+	.header .menu > .menu-item > a
+		color: $color-white
+		padding: 12px 15px
+		border-bottom: 1px solid #333333
+	.header .menu > .menu-item:first-child > a
+		border-top: 1px solid #333333
+	.header .menu > .menu-item > a 
+		.plus::before
+			background-color: $color-white
+	.header .menu > .menu-item > a 
+		.plus::after
+			background-color: $color-white
+	.header .menu > .menu-item-has-children.active > a 
+		.plus::after
+			transform: translate(-50%,-50%) rotate(0deg)
+	.header 
+		.menu > .menu-item > .sub-menu
+			width: 100%
+			position: relative
+			opacity: 1
+			visibility: visible
+			border:none
+			background-color: transparent
+			box-shadow: none
+			transform: translateY(0px)
+			padding: 0px
+			left: auto
+			top:auto
+			max-height: 0
+			overflow: hidden
+	.menu > .menu-item > .sub-menu > .menu-item > a
+		padding: 12px 45px
+		color: $color-white
+		border-bottom: 1px solid #333333
+	.header .close-nav-menu,
+	.header .open-nav-menu
+		display: flex
+	.phone
+		display: none
+
+
+
+	
+

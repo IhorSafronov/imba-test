@@ -1,0 +1,38 @@
+.banner-content
+    position: relative
+    height: 100%
+    // border: 1px solid green
+    @include respond (full-screen)
+        margin: 0 375px
+    @include respond (phone)
+        margin: 0 16px
+    .badges
+        position: relative
+        display: flex
+        z-index: 3
+        @include respond (full-screen)
+            margin: 102px 0 66px 0
+        @include respond (phone)
+            margin: 168px 0 85px 0
+        .badge-status
+            background-color: $green-badge-color
+            padding: 5px 20px
+            border-radius: 30px
+            margin-right: 15px
+            p
+                font-weight: 500
+                font-size: 18px
+                line-height: 150%
+                color: $brand-text-color
+                text-transform: uppercase
+        .badge-bestseller
+            background-color: $yellow-badge-color
+            padding: 5px 20px
+            border-radius: 30px
+            p
+                font-weight: 500
+                font-size: 18px
+                line-height: 150%
+                color: $brand-text-color
+                span
+                    text-transform: uppercase
